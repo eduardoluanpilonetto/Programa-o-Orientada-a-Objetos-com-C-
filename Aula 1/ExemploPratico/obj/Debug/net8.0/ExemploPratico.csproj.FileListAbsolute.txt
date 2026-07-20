@@ -1,0 +1,15 @@
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\bin\Debug\net8.0\ExemploPratico.exe
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\bin\Debug\net8.0\ExemploPratico.deps.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\bin\Debug\net8.0\ExemploPratico.runtimeconfig.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\bin\Debug\net8.0\ExemploPratico.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\bin\Debug\net8.0\ExemploPratico.pdb
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\ExemploPratico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\ExemploPratico.AssemblyInfoInputs.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\ExemploPratico.AssemblyInfo.cs
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\ExemploPratico.csproj.CoreCompileInputs.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\ExemploPratico.sourcelink.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\ExemploPratico.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\refint\ExemploPratico.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\ExemploPratico.pdb
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\ExemploPratico.genruntimeconfig.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\ExemploPratico\obj\Debug\net8.0\ref\ExemploPratico.dll
