@@ -1,0 +1,15 @@
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\bin\Debug\net8.0\CorrecaoExercícios.exe
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\bin\Debug\net8.0\CorrecaoExercícios.deps.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\bin\Debug\net8.0\CorrecaoExercícios.runtimeconfig.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\bin\Debug\net8.0\CorrecaoExercícios.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\bin\Debug\net8.0\CorrecaoExercícios.pdb
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\CorrecaoExercícios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\CorrecaoExercícios.AssemblyInfoInputs.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\CorrecaoExercícios.AssemblyInfo.cs
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\CorrecaoExercícios.csproj.CoreCompileInputs.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\CorrecaoExercícios.sourcelink.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\CorrecaoExercícios.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\refint\CorrecaoExercícios.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\CorrecaoExercícios.pdb
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\CorrecaoExercícios.genruntimeconfig.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 1\CorrecaoExercícios\obj\Debug\net8.0\ref\CorrecaoExercícios.dll
