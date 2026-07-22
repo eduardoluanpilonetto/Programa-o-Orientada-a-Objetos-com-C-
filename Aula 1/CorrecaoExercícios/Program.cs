@@ -22,6 +22,7 @@ class Program
         Console.WriteLine("INSTANCA EXERCICIO 3");
         Produto prod = new Produto();
         prod.Nome = "Sabonete";
+        prod.Preco = 2.99;
         prod.AdicionarQtd(114);
         prod.RemoverQtd(5);
         prod.RemoverQtd(5);

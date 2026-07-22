@@ -42,7 +42,7 @@ namespace CorrecaoExercicios
     {
         public string Nome;
         public int Quantidade;
-        public string Preco;
+        public double Preco;
         
         public void AdicionarQtd(int qtd) 
         {
