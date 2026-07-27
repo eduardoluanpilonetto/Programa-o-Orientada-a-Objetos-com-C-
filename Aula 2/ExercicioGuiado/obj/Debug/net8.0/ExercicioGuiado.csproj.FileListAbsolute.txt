@@ -1,0 +1,15 @@
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\bin\Debug\net8.0\ExercicioGuiado.exe
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\bin\Debug\net8.0\ExercicioGuiado.deps.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\bin\Debug\net8.0\ExercicioGuiado.runtimeconfig.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\bin\Debug\net8.0\ExercicioGuiado.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\bin\Debug\net8.0\ExercicioGuiado.pdb
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\ExercicioGuiado.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\ExercicioGuiado.AssemblyInfoInputs.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\ExercicioGuiado.AssemblyInfo.cs
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\ExercicioGuiado.csproj.CoreCompileInputs.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\ExercicioGuiado.sourcelink.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\ExercicioGuiado.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\refint\ExercicioGuiado.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\ExercicioGuiado.pdb
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\ExercicioGuiado.genruntimeconfig.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 2\ExercicioGuiado\obj\Debug\net8.0\ref\ExercicioGuiado.dll
