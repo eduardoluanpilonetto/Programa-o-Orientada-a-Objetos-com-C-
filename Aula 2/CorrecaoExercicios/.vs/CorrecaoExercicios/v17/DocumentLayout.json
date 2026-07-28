@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 2\\CorrecaoExercicios\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E840DAF2-DF0A-490B-B692-3F91DBB5B15A}|CorrecaoExercicios.csproj|c:\\users\\eduardo.pilonetto\\documents\\programa-o-orientada-a-objetos-com-c-\\aula 2\\correcaoexercicios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E840DAF2-DF0A-490B-B692-3F91DBB5B15A}|CorrecaoExercicios.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E840DAF2-DF0A-490B-B692-3F91DBB5B15A}|CorrecaoExercicios.csproj|c:\\users\\eduardo.pilonetto\\documents\\programa-o-orientada-a-objetos-com-c-\\aula 2\\correcaoexercicios\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E840DAF2-DF0A-490B-B692-3F91DBB5B15A}|CorrecaoExercicios.csproj|solutionrelative:classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Classes.cs",
+              "DocumentMoniker": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 2\\CorrecaoExercicios\\Classes.cs",
+              "RelativeDocumentMoniker": "Classes.cs",
+              "ToolTip": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 2\\CorrecaoExercicios\\Classes.cs",
+              "RelativeToolTip": "Classes.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T00:12:47.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 2\\CorrecaoExercicios\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 2\\CorrecaoExercicios\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAIwDsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T00:12:25.015Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
