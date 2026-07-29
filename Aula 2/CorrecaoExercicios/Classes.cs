@@ -26,11 +26,8 @@ namespace Classes
 
         public void MostrarProduto()
         {
-            Console.WriteLine($"Nome: {Nome}\n Quantidade {Quantidade}\n preço {Preco}");
-
+            Console.WriteLine($"Nome: {Nome}\nQuantidade {Quantidade}\npreço {Preco}");
         }
-
-
     }
 
     class Carro
@@ -71,6 +68,11 @@ namespace Classes
 
         public void Sacar(double valor)
         {
+            if(valor > saldo)
+            {
+                Console.Write("Saque Indisponível");
+                return;
+            }
             saldo = saldo - valor;
         }
 
@@ -93,32 +95,72 @@ namespace Classes
         public void AumentarSalario(double porcentagem)
         {
             Salario = ((porcentagem / 100) + 1) * Salario;
-            Console.WriteLine($"Salario aumentado em {porcentagem}%");
+            Console.WriteLine($"Salario aumentado em {porcentagem}% e passou a ser R${Salario}");
         }
     }
-}
 
-public class Telefone
-
-{
-
-    public string Marca;
-    public string Modelo;
-    public int Bateria;
-    public bool Ligado;
-
-    public void MistrarBateria()
+    public class Telefone
     {
-        Console.WriteLine($"Bateria: {Bateria}%");    
+
+        public string Marca;
+        public string Modelo;
+        public int Bateria;
+        public bool Ligado;
+
+        public void MistrarBateria()
+        {
+            Console.WriteLine($"Bateria: {Bateria}%");
+        }
+
+        public void Ligar()
+        {
+            Ligado = true;
+        }
+
+        public void Desligar()
+        {
+            Ligado = false;
+        }
     }
 
-    public void Ligar()
+    class Livro
     {
-        Ligado = true;
+        public string Titulo;
+        public string Autor;
+        public int QtdPagina;
+
+        public void ExibirLivro()
+        {
+            Console.WriteLine($"Livro {Titulo} | Autor {Autor} | Qtd Páginas {QtdPagina}");
+        }
     }
 
-    public void Desligar()
+    class Retangulo
     {
-        Ligado = false;
+        public double Base;
+        public double Altura;
+
+        public void CalcularArea()
+        {
+            Console.WriteLine($"Área: {Base * Altura}cm2");
+        }
+        public void CalcularPerimetro()
+        {
+            Console.WriteLine($"Perímetro: {(Base + Altura) * 2}");
+        }
     }
+
+    class Pet
+    {
+        public string Nome;
+        public string Tipo;
+        public int Idade;
+        public double Peso;
+
+        public void ExibirPet()
+        {
+            Console.WriteLine($"Meu pet tem o nome de {Nome}, o tipo do pet é {Tipo},a idade é {Idade} e o peso é {Peso}");
+        }
+    }
+
 }
