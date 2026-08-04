@@ -6,7 +6,8 @@ class Program
     {
         Pessoa pessoa = new Pessoa("João", 25, "123.456.789-00");
 
-        pessoa.Nome = "Maria";
+        pessoa.Nome = "Maria"; // Usando Property
+        pessoa.setNome("Maria2"); //Usando Método
         pessoa.Idade = 30;
 
         // As linhas abaixo gerariam erro, pois o setter é privado:
@@ -66,5 +67,10 @@ public class Pessoa
         Console.WriteLine($"Idade: {Idade}");
         Console.WriteLine($"CPF: {CPF}");
         Console.WriteLine($"Data de Cadastro: {DataCadastro}");
+    }
+
+    public void setNome(string valor)
+    {
+        nome = valor;
     }
 }
