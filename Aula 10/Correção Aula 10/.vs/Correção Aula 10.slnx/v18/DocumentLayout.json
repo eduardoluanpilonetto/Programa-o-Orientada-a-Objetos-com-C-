@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 10\\Corre\u00E7\u00E3o Aula 10\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{066CAEAF-1EAD-4123-BB14-F21FB8735776}|Corre\u00E7\u00E3o Aula 10\\Corre\u00E7\u00E3o Aula 10.csproj|c:\\users\\eduardo.pilonetto\\documents\\programa-o-orientada-a-objetos-com-c-\\aula 10\\corre\u00E7\u00E3o aula 10\\corre\u00E7\u00E3o aula 10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{066CAEAF-1EAD-4123-BB14-F21FB8735776}|Corre\u00E7\u00E3o Aula 10\\Corre\u00E7\u00E3o Aula 10.csproj|solutionrelative:corre\u00E7\u00E3o aula 10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 10\\Corre\u00E7\u00E3o Aula 10\\Corre\u00E7\u00E3o Aula 10\\Program.cs",
+              "RelativeDocumentMoniker": "Corre\u00E7\u00E3o Aula 10\\Program.cs",
+              "ToolTip": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 10\\Corre\u00E7\u00E3o Aula 10\\Corre\u00E7\u00E3o Aula 10\\Program.cs",
+              "RelativeToolTip": "Corre\u00E7\u00E3o Aula 10\\Program.cs",
+              "ViewState": "AgIAANoBAAAAAAAAAAAgwK8BAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-29T23:18:04.992Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
