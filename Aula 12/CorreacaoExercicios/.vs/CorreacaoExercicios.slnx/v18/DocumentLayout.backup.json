@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 12\\CorreacaoExercicios\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{03FBBB01-97DF-49B7-9632-F1DBF4CD1A66}|CorreacaoExercicios\\CorreacaoExercicios.csproj|c:\\users\\eduardo.pilonetto\\documents\\programa-o-orientada-a-objetos-com-c-\\aula 12\\correacaoexercicios\\correacaoexercicios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03FBBB01-97DF-49B7-9632-F1DBF4CD1A66}|CorreacaoExercicios\\CorreacaoExercicios.csproj|solutionrelative:correacaoexercicios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 12\\CorreacaoExercicios\\CorreacaoExercicios\\Program.cs",
+              "RelativeDocumentMoniker": "CorreacaoExercicios\\Program.cs",
+              "ToolTip": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 12\\CorreacaoExercicios\\CorreacaoExercicios\\Program.cs*",
+              "RelativeToolTip": "CorreacaoExercicios\\Program.cs*",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T23:59:27.733Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
