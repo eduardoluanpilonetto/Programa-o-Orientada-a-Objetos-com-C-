@@ -11,8 +11,8 @@ public class FormClientes : FormBase
     private readonly TextBox _busca = new() { PlaceholderText = "Buscar por nome, telefone ou CPF..." };
     private readonly TextBox _nome = new() { MaxLength = 100 };
     private readonly TextBox _endereco = new() { MaxLength = 200 };
-    private readonly TextBox _telefone = new() { MaxLength = 20 };
-    private readonly MaskedTextBox _cpf = new() { Mask = @"000\.000\.000-00" };
+    private readonly CampoTelefone _telefone = new();
+    private readonly CampoCpf _cpf = new();
     private int _idAtual;
 
     /// <summary>Id do último cliente salvo (usado pela tela de agendamento para já selecioná-lo).</summary>
@@ -104,14 +104,13 @@ public class FormClientes : FormBase
 
     private void Salvar()
     {
-        bool cpfVazio = !_cpf.Text.Any(char.IsDigit);
         var cliente = new Cliente
         {
             Id = _idAtual,
             Nome = _nome.Text.Trim(),
             Endereco = _endereco.Text.Trim(),
-            Telefone = _telefone.Text.Trim(),
-            Cpf = cpfVazio ? "" : _cpf.Text
+            Telefone = _telefone.Text,
+            Cpf = _cpf.Text
         };
         _servico.Salvar(cliente);
 

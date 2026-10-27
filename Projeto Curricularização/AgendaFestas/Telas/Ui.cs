@@ -30,6 +30,15 @@ public static class Ui
         grade.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9.5f, FontStyle.Bold);
         grade.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 243, 250);
         grade.DataBindingComplete += (_, _) => FormatarColunas(grade);
+        // célula apagada: texto vira "" e número vira 0, em vez de null (que gerava erro)
+        grade.CellParsing += (_, e) =>
+        {
+            if (e.Value is string texto && string.IsNullOrWhiteSpace(texto) && e.DesiredType is not null)
+            {
+                e.Value = e.DesiredType == typeof(string) ? "" : Activator.CreateInstance(e.DesiredType);
+                e.ParsingApplied = true;
+            }
+        };
         grade.DataError += (_, e) =>
         {
             Aviso("Valor inválido. Digite apenas números (ex.: 150,00).");

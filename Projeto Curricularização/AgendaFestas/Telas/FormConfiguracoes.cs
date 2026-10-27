@@ -8,7 +8,7 @@ public class FormConfiguracoes : FormBase
 {
     private readonly BancoDados _banco;
     private readonly TextBox _nomeEmpresa = new();
-    private readonly TextBox _telefone = new();
+    private readonly CampoTelefone _telefone = new();
     private readonly TextBox _endereco = new();
     private readonly TextBox _observacao = new() { Multiline = true, Height = 70 };
 
@@ -42,11 +42,13 @@ public class FormConfiguracoes : FormBase
     {
         if (string.IsNullOrWhiteSpace(_nomeEmpresa.Text))
             throw new ValidacaoException("Informe o nome da empresa.");
+        if (_telefone.Digitos.Length > 0 && !ValidadorTelefone.EhValido(_telefone.Text))
+            throw new ValidacaoException("Telefone inválido. Informe DDD + número, ex.: (49) 3333-4444.");
 
         _banco.SalvarConfiguracao(new Configuracao
         {
             NomeEmpresa = _nomeEmpresa.Text.Trim(),
-            Telefone = _telefone.Text.Trim(),
+            Telefone = _telefone.Text,
             Endereco = _endereco.Text.Trim(),
             ObservacaoCatalogo = _observacao.Text.Trim()
         });

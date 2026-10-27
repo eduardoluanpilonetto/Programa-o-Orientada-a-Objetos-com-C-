@@ -9,8 +9,7 @@ public class FormAgendamentos : FormBase
     private readonly RelatorioServico _relatorio;
     private readonly AgendamentoServico _servico;
     private readonly DataGridView _grade = Ui.CriarGrade();
-    private readonly DateTimePicker _de = Ui.CampoData(DateTime.Today.AddMonths(-1));
-    private readonly DateTimePicker _ate = Ui.CampoData(DateTime.Today.AddYears(1));
+    private readonly FiltroPeriodo _periodo = new("De:", DateTime.Today.AddMonths(-1), DateTime.Today.AddYears(1));
     private readonly TextBox _busca = new() { PlaceholderText = "Nome do cliente...", Width = 220 };
 
     public FormAgendamentos(BancoDados banco)
@@ -23,8 +22,7 @@ public class FormAgendamentos : FormBase
 
         var filtros = new FlowLayoutPanel { AutoSize = true, WrapContents = false, Padding = new Padding(0, 0, 0, 8) };
         filtros.Controls.AddRange([
-            Ui.RotuloSimples("De:"), _de,
-            Ui.RotuloSimples("Até:"), _ate,
+            _periodo,
             Ui.RotuloSimples("Cliente:"), _busca,
             Ui.Botao("Filtrar", (_, _) => Carregar())
         ]);
@@ -52,7 +50,7 @@ public class FormAgendamentos : FormBase
 
     private void Carregar()
     {
-        _grade.DataSource = _relatorio.ListarAgendamentos(_de.Value, _ate.Value)
+        _grade.DataSource = _relatorio.ListarAgendamentos(_periodo.De, _periodo.Ate)
             .Where(l => l.Cliente.Contains(_busca.Text.Trim(), StringComparison.OrdinalIgnoreCase))
             .ToList();
     }

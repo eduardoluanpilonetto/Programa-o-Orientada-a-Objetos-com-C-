@@ -8,8 +8,14 @@ namespace AgendaFestas.Modelos;
 /// </summary>
 public class VariacaoServico
 {
+    private string _nome = "";
+
     [DisplayName("Variação / Tamanho")]
-    public string Nome { get; set; } = "";
+    public string Nome
+    {
+        get => _nome;
+        set => _nome = value?.Trim() ?? ""; // a grade envia null quando a célula é apagada
+    }
 
     [DisplayName("Segunda")] public decimal PrecoSegunda { get; set; }
     [DisplayName("Terça")] public decimal PrecoTerca { get; set; }

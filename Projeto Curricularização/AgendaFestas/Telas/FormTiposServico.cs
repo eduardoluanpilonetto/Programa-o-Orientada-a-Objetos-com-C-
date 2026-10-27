@@ -25,7 +25,6 @@ public class FormTiposServico : FormBase
         Ui.Campo(formulario, "Descrição", _descricao);
 
         _gradeVariacoes.AllowUserToAddRows = true;
-        _gradeVariacoes.AllowUserToDeleteRows = true;
         _gradeVariacoes.DataBindingComplete += (_, _) =>
         {
             foreach (DataGridViewColumn coluna in _gradeVariacoes.Columns)
@@ -39,21 +38,28 @@ public class FormTiposServico : FormBase
 
         var ajuda = new Label
         {
-            Text = "Variações e preços por dia (ex.: Simples - Pequena, Luxo - Grande). Digite na última linha para adicionar; " +
-                   "Delete remove a linha. Sem variações = valor informado no agendamento.",
+            Text = "Variações e preços por dia (ex.: Simples - Pequena, Luxo - Grande). Para adicionar, digite na última linha " +
+                   "e clique em Salvar. Sem variações = valor informado no agendamento.",
             AutoSize = false,
             Height = 50,
             ForeColor = Color.DimGray
         };
 
+        var botoesVariacao = Ui.BarraBotoes(
+            Ui.Botao("Remover variação", (_, _) => RemoverVariacao()),
+            Ui.Botao("Mesmo preço todos os dias", (_, _) => RepetirPrecoSegunda()));
+        botoesVariacao.Padding = new Padding(0, 6, 0, 0);
+
+        var botoesServico = Ui.BarraBotoes(
+            Ui.Botao("Novo serviço", (_, _) => Novo()),
+            Ui.Botao("Salvar", (_, _) => Salvar(), destaque: true),
+            Ui.Botao("Excluir serviço", (_, _) => Excluir()));
+        botoesServico.Padding = new Padding(0, 14, 0, 0);
+
         var painelDados = new Panel { Width = 820, Padding = new Padding(16, 0, 0, 0) };
         Ui.Montar(painelDados, _gradeVariacoes,
             topo: [Ui.Titulo("Dados do serviço"), formulario, ajuda],
-            rodape: [Ui.BarraBotoes(
-                Ui.Botao("Mesmo preço todos os dias", (_, _) => RepetirPrecoSegunda()),
-                Ui.Botao("Novo", (_, _) => Novo()),
-                Ui.Botao("Salvar", (_, _) => Salvar(), destaque: true),
-                Ui.Botao("Excluir", (_, _) => Excluir()))]);
+            rodape: [botoesVariacao, botoesServico]);
 
         Ui.Montar(this, _grade, topo: [Ui.Titulo("Tipos de serviço")], direita: painelDados);
 
@@ -124,7 +130,25 @@ public class FormTiposServico : FormBase
         _gradeVariacoes.Refresh();
     }
 
-    private void Salvar()
+    /// <summary>Remove só a variação selecionada (o serviço continua) e grava na hora.</summary>
+    private void RemoverVariacao()
+    {
+        _gradeVariacoes.EndEdit();
+        if (Ui.Selecionado<VariacaoServico>(_gradeVariacoes) is not { } variacao)
+        {
+            Ui.Aviso("Clique na variação que deseja remover.");
+            return;
+        }
+        string nome = string.IsNullOrWhiteSpace(variacao.Nome) ? "sem nome" : $"\"{variacao.Nome}\"";
+        if (!Ui.Confirmar($"Remover a variação {nome} do serviço \"{_nome.Text}\"?"))
+            return;
+
+        _variacoes.Remove(variacao);
+        if (_idAtual != 0)
+            Salvar(mostrarMensagem: false);
+    }
+
+    private void Salvar(bool mostrarMensagem = true)
     {
         _gradeVariacoes.EndEdit();
 
@@ -132,7 +156,6 @@ public class FormTiposServico : FormBase
         var variacoes = _variacoes
             .Where(v => !string.IsNullOrWhiteSpace(v.Nome) || v.Precos().Any(p => p != 0))
             .ToList();
-        variacoes.ForEach(v => v.Nome = v.Nome.Trim());
 
         var tipo = new TipoServico
         {
@@ -148,7 +171,8 @@ public class FormTiposServico : FormBase
             _banco.TiposServico.Atualizar(tipo);
 
         Carregar(tipo.Id);
-        Ui.Info("Serviço salvo com sucesso.");
+        if (mostrarMensagem)
+            Ui.Info("Serviço salvo com sucesso.");
     }
 
     private void Excluir()
@@ -158,7 +182,7 @@ public class FormTiposServico : FormBase
             Ui.Aviso("Selecione um serviço na lista.");
             return;
         }
-        if (!Ui.Confirmar($"Excluir o serviço \"{_nome.Text}\"?\n\nAgendamentos já feitos com ele não serão alterados."))
+        if (!Ui.Confirmar($"Excluir o serviço \"{_nome.Text}\" inteiro, com todas as variações?\n\nAgendamentos já feitos com ele não serão alterados."))
             return;
 
         _banco.TiposServico.Remover(_idAtual);

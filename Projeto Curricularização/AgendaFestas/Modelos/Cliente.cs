@@ -22,6 +22,8 @@ public class Cliente : Entidade
             yield return "Informe o endereço do cliente.";
         if (string.IsNullOrWhiteSpace(Telefone))
             yield return "Informe o telefone do cliente.";
+        else if (!ValidadorTelefone.EhValido(Telefone))
+            yield return "Telefone inválido. Informe DDD + número, ex.: (49) 99999-0000.";
         if (!string.IsNullOrWhiteSpace(Cpf) && !ValidadorCpf.EhValido(Cpf))
             yield return "CPF inválido.";
     }

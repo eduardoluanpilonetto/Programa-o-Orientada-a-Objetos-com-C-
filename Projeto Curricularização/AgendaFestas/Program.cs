@@ -1,6 +1,7 @@
 using System.Globalization;
 using AgendaFestas.Dados;
 using AgendaFestas.Modelos;
+using AgendaFestas.Pdf;
 using AgendaFestas.Telas;
 using QuestPDF.Infrastructure;
 
@@ -18,7 +19,8 @@ static class Program
         CultureInfo.CurrentCulture = culturaBrasil;
         CultureInfo.CurrentUICulture = culturaBrasil;
 
-        // Licença gratuita do QuestPDF (empresas com faturamento anual até US$ 1 milhão)
+        // Fontes dos PDFs + licença gratuita do QuestPDF (empresas com faturamento anual até US$ 1 milhão)
+        FontesPdf.Preparar();
         QuestPDF.Settings.License = LicenseType.Community;
 
         // Erros de validação viram aviso amigável; outros erros mostram a mensagem sem fechar o programa

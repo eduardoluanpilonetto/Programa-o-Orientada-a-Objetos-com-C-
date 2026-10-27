@@ -21,9 +21,12 @@ public class FormAgendamentoEdicao : FormBase
     private readonly NumericUpDown _valorUnitario = Ui.CampoValor();
     private readonly DataGridView _gradeItens = Ui.CriarGrade(somenteLeitura: false);
     private readonly TextBox _observacoes = new() { Multiline = true, Height = 50, ScrollBars = ScrollBars.Vertical };
-    private readonly Label _valorTotal = new() { AutoSize = true, Font = new Font("Segoe UI", 14f, FontStyle.Bold), ForeColor = Ui.CorPrincipal, Margin = new Padding(0, 0, 30, 0) };
+    private readonly Label _valorServicos = new() { AutoSize = true, Font = new Font("Segoe UI", 11f, FontStyle.Bold), Margin = new Padding(0, 6, 24, 0) };
+    private readonly NumericUpDown _desconto = Ui.CampoValor();
+    private readonly Label _valorTotal = new() { AutoSize = true, Font = new Font("Segoe UI", 14f, FontStyle.Bold), ForeColor = Ui.CorPrincipal, Margin = new Padding(0, 0, 24, 0) };
     private readonly NumericUpDown _valorPago = Ui.CampoValor();
     private readonly Label _saldo = new() { AutoSize = true, Font = new Font("Segoe UI", 12f, FontStyle.Bold), Margin = new Padding(20, 4, 0, 0) };
+    private DateTime _dataAnterior;
 
     public FormAgendamentoEdicao(BancoDados banco, int? agendamentoId = null, DateTime? dataSugerida = null)
     {
@@ -34,14 +37,18 @@ public class FormAgendamentoEdicao : FormBase
         _itens = new BindingList<ItemAgendamento>(_agendamento.Itens);
 
         Text = _agendamento.Id == 0 ? "Novo agendamento" : "Editar agendamento";
-        Size = new Size(1100, 720);
+        Size = new Size(1180, 740);
         MinimumSize = new Size(900, 600);
 
         MontarTela();
         CarregarClientes(_agendamento.ClienteId);
         _tipo.DataSource = banco.TiposServico.ObterTodos().OrderBy(t => t.Nome).ToList();
 
+        // Não permite escolher dia que já passou (festa antiga pode ser aberta para registrar pagamento)
+        _dataAnterior = _agendamento.DataEvento;
         _data.Value = _agendamento.DataEvento;
+        _data.MinDate = _agendamento.DataEvento < DateTime.Today ? _agendamento.DataEvento : DateTime.Today;
+        _desconto.Value = _agendamento.Desconto;
         _valorPago.Value = _agendamento.ValorPago;
         _observacoes.Text = _agendamento.Observacoes;
         _gradeItens.DataSource = _itens;
@@ -59,7 +66,11 @@ public class FormAgendamentoEdicao : FormBase
         var linhaData = new FlowLayoutPanel { AutoSize = true, WrapContents = false, Margin = Padding.Empty };
         linhaData.Controls.Add(_data);
         linhaData.Controls.Add(_diaSemana);
-        _data.ValueChanged += (_, _) => AtualizarDiaSemana();
+        _data.ValueChanged += (_, _) =>
+        {
+            AtualizarDiaSemana();
+            AtualizarPrecosDaData();
+        };
 
         var formulario = Ui.Formulario();
         Ui.Campo(formulario, "Cliente *", linhaCliente).Dock = DockStyle.None;
@@ -89,14 +100,14 @@ public class FormAgendamentoEdicao : FormBase
 
         var dicaGrade = new Label
         {
-            Text = "Quantidade e valor unitário podem ser alterados direto na tabela.",
+            Text = "Quantidade e valor unitário podem ser alterados na tabela. Ao mudar a data, os preços de tabela\n" +
+                   "são atualizados para o novo dia; valores digitados à mão são mantidos.",
             AutoSize = true,
             ForeColor = Color.DimGray,
-            Padding = new Padding(0, 4, 0, 0)
+            Padding = new Padding(0, 0, 0, 0)
         };
         var botoesItens = Ui.BarraBotoes(
             Ui.Botao("Remover serviço", (_, _) => RemoverItem()),
-            Ui.Botao("Recalcular valores pela tabela da data", (_, _) => RecalcularPelaTabela()),
             dicaGrade);
 
         var grupoServicos = new GroupBox { Text = "Serviços contratados", Padding = new Padding(10) };
@@ -106,12 +117,16 @@ public class FormAgendamentoEdicao : FormBase
         var formObs = Ui.Formulario();
         Ui.Campo(formObs, "Observações", _observacoes);
 
-        var totais = new FlowLayoutPanel { AutoSize = true, WrapContents = false, Padding = new Padding(0, 6, 0, 0) };
+        var totais = new FlowLayoutPanel { AutoSize = true, WrapContents = true, Padding = new Padding(0, 6, 0, 0) };
         totais.Controls.AddRange([
-            Ui.RotuloSimples("Valor total:"), _valorTotal,
+            Ui.RotuloSimples("Serviços:"), _valorServicos,
+            Ui.RotuloSimples("Desconto:"), _desconto,
+            Ui.RotuloSimples("   Total:"), _valorTotal,
             Ui.RotuloSimples("Valor pago:"), _valorPago,
             _saldo
         ]);
+        _desconto.Margin = new Padding(0, 3, 24, 0);
+        _desconto.ValueChanged += (_, _) => AtualizarTotais();
         _valorPago.ValueChanged += (_, _) => AtualizarTotais();
 
         var botoes = Ui.BarraBotoes(
@@ -175,7 +190,8 @@ public class FormAgendamentoEdicao : FormBase
         if (_valorUnitario.Value == 0 && !Ui.Confirmar("O valor do serviço está zerado. Adicionar mesmo assim?"))
             return;
 
-        _itens.Add(new ItemAgendamento
+        _gradeItens.EndEdit();
+        bool substituiu = _agendamento.AdicionarServico(new ItemAgendamento
         {
             TipoServicoId = tipo.Id,
             NomeServico = tipo.Nome,
@@ -183,7 +199,11 @@ public class FormAgendamentoEdicao : FormBase
             Quantidade = (int)_quantidade.Value,
             ValorUnitario = _valorUnitario.Value
         });
+        _itens.ResetBindings(); // _itens enxerga a mesma lista de _agendamento.Itens
         _quantidade.Value = 1;
+
+        if (substituiu)
+            Ui.Info($"\"{tipo.Nome}\" já estava no agendamento e foi substituído pela nova opção.");
     }
 
     private void RemoverItem()
@@ -194,20 +214,23 @@ public class FormAgendamentoEdicao : FormBase
             Ui.Aviso("Selecione o serviço que deseja remover.");
     }
 
-    private void RecalcularPelaTabela()
+    private void AtualizarPrecosDaData()
     {
-        if (!Ui.Confirmar("Substituir o valor unitário dos serviços pelo preço da tabela para esta data?"))
+        if (_data.Value.Date == _dataAnterior.Date)
             return;
 
         _gradeItens.EndEdit();
-        _servico.RecalcularPelaTabela(_itens, _data.Value);
+        _servico.AtualizarPrecosParaNovaData(_itens, _dataAnterior, _data.Value);
+        _dataAnterior = _data.Value;
         _itens.ResetBindings();
     }
 
     private void AtualizarTotais()
     {
-        decimal total = _itens.Sum(i => i.Subtotal);
+        decimal servicos = _itens.Sum(i => i.Subtotal);
+        decimal total = servicos - _desconto.Value;
         decimal saldo = total - _valorPago.Value;
+        _valorServicos.Text = servicos.ToString("C2");
         _valorTotal.Text = total.ToString("C2");
         _saldo.Text = saldo > 0 ? $"A receber: {saldo:C2}" : saldo == 0 ? "Quitado" : $"Pago a mais: {-saldo:C2}";
         _saldo.ForeColor = saldo > 0 ? Color.Firebrick : Color.SeaGreen;
@@ -220,7 +243,7 @@ public class FormAgendamentoEdicao : FormBase
 
         _agendamento.ClienteId = (_cliente.SelectedItem as Cliente)?.Id ?? 0;
         _agendamento.DataEvento = _data.Value.Date;
-        _agendamento.Itens = _itens.ToList();
+        _agendamento.Desconto = _desconto.Value;
         _agendamento.ValorPago = _valorPago.Value;
         _agendamento.Observacoes = _observacoes.Text.Trim();
         _agendamento.GarantirValido();

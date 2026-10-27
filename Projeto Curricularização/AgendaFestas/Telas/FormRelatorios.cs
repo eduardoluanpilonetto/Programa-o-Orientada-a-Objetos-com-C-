@@ -12,15 +12,13 @@ public class FormRelatorios : FormBase
 
     // Relatório de agendamentos
     private readonly DataGridView _gradeAgendamentos = Ui.CriarGrade();
-    private readonly DateTimePicker _deAg = Ui.CampoData(PrimeiroDiaDoMes());
-    private readonly DateTimePicker _ateAg = Ui.CampoData(PrimeiroDiaDoMes().AddMonths(1).AddDays(-1));
+    private readonly FiltroPeriodo _periodoAg = new("De:", PrimeiroDiaDoMes(), UltimoDiaDoMes());
     private readonly ComboBox _clienteAg = new() { DropDownStyle = ComboBoxStyle.DropDownList, Width = 260 };
     private readonly Label _totaisAg = new() { AutoSize = true, Font = new Font("Segoe UI", 10.5f, FontStyle.Bold) };
 
     // Caixa por cliente
     private readonly DataGridView _gradeCaixa = Ui.CriarGrade();
-    private readonly DateTimePicker _deCx = Ui.CampoData(PrimeiroDiaDoMes());
-    private readonly DateTimePicker _ateCx = Ui.CampoData(PrimeiroDiaDoMes().AddMonths(1).AddDays(-1));
+    private readonly FiltroPeriodo _periodoCx = new("Eventos de:", PrimeiroDiaDoMes(), UltimoDiaDoMes());
     private readonly Label _totaisCx = new() { AutoSize = true, Font = new Font("Segoe UI", 10.5f, FontStyle.Bold) };
 
     public FormRelatorios(BancoDados banco, int abaInicial = 0)
@@ -43,6 +41,7 @@ public class FormRelatorios : FormBase
     }
 
     private static DateTime PrimeiroDiaDoMes() => new(DateTime.Today.Year, DateTime.Today.Month, 1);
+    private static DateTime UltimoDiaDoMes() => PrimeiroDiaDoMes().AddMonths(1).AddDays(-1);
 
     protected override void OnShown(EventArgs e)
     {
@@ -57,8 +56,7 @@ public class FormRelatorios : FormBase
     {
         var filtros = new FlowLayoutPanel { AutoSize = true, WrapContents = false, Padding = new Padding(0, 0, 0, 8) };
         filtros.Controls.AddRange([
-            Ui.RotuloSimples("De:"), _deAg,
-            Ui.RotuloSimples("Até:"), _ateAg,
+            _periodoAg,
             Ui.RotuloSimples("Cliente:"), _clienteAg,
             Ui.Botao("Atualizar", (_, _) => CarregarAgendamentos()),
             Ui.Botao("Gerar PDF", (_, _) => PdfAgendamentos(), destaque: true)
@@ -72,7 +70,7 @@ public class FormRelatorios : FormBase
     private int? ClienteFiltro => _clienteAg.SelectedItem is Cliente { Id: > 0 } c ? c.Id : null;
 
     private List<LinhaAgendamento> ConsultarAgendamentos() =>
-        _relatorio.ListarAgendamentos(_deAg.Value, _ateAg.Value, ClienteFiltro);
+        _relatorio.ListarAgendamentos(_periodoAg.De, _periodoAg.Ate, ClienteFiltro);
 
     private void CarregarAgendamentos()
     {
@@ -85,8 +83,8 @@ public class FormRelatorios : FormBase
     private void PdfAgendamentos()
     {
         var linhas = ConsultarAgendamentos();
-        Ui.SalvarEAbrirPdf($"Agendamentos {_deAg.Value:dd-MM-yyyy} a {_ateAg.Value:dd-MM-yyyy}.pdf",
-            caminho => new RelatorioAgendamentosPdf(_banco.ObterConfiguracao(), linhas, _deAg.Value, _ateAg.Value).Gerar(caminho));
+        Ui.SalvarEAbrirPdf($"Agendamentos {_periodoAg.De:dd-MM-yyyy} a {_periodoAg.Ate:dd-MM-yyyy}.pdf",
+            caminho => new RelatorioAgendamentosPdf(_banco.ObterConfiguracao(), linhas, _periodoAg.De, _periodoAg.Ate).Gerar(caminho));
     }
 
     // ---------- Caixa por cliente ----------
@@ -95,8 +93,7 @@ public class FormRelatorios : FormBase
     {
         var filtros = new FlowLayoutPanel { AutoSize = true, WrapContents = false, Padding = new Padding(0, 0, 0, 8) };
         filtros.Controls.AddRange([
-            Ui.RotuloSimples("Eventos de:"), _deCx,
-            Ui.RotuloSimples("Até:"), _ateCx,
+            _periodoCx,
             Ui.Botao("Atualizar", (_, _) => CarregarCaixa()),
             Ui.Botao("Gerar PDF", (_, _) => PdfCaixa(), destaque: true)
         ]);
@@ -108,7 +105,7 @@ public class FormRelatorios : FormBase
 
     private void CarregarCaixa()
     {
-        var resumos = _relatorio.CaixaPorCliente(_deCx.Value, _ateCx.Value);
+        var resumos = _relatorio.CaixaPorCliente(_periodoCx.De, _periodoCx.Ate);
         _gradeCaixa.DataSource = resumos;
         _totaisCx.Text = $"Total contratado: {resumos.Sum(r => r.TotalContratado):C2}   •   " +
                          $"Recebido: {resumos.Sum(r => r.TotalPago):C2}   •   A receber: {resumos.Sum(r => r.AReceber):C2}";
@@ -116,8 +113,8 @@ public class FormRelatorios : FormBase
 
     private void PdfCaixa()
     {
-        var resumos = _relatorio.CaixaPorCliente(_deCx.Value, _ateCx.Value);
-        Ui.SalvarEAbrirPdf($"Caixa por cliente {_deCx.Value:dd-MM-yyyy} a {_ateCx.Value:dd-MM-yyyy}.pdf",
-            caminho => new RelatorioCaixaPdf(_banco.ObterConfiguracao(), resumos, _deCx.Value, _ateCx.Value).Gerar(caminho));
+        var resumos = _relatorio.CaixaPorCliente(_periodoCx.De, _periodoCx.Ate);
+        Ui.SalvarEAbrirPdf($"Caixa por cliente {_periodoCx.De:dd-MM-yyyy} a {_periodoCx.Ate:dd-MM-yyyy}.pdf",
+            caminho => new RelatorioCaixaPdf(_banco.ObterConfiguracao(), resumos, _periodoCx.De, _periodoCx.Ate).Gerar(caminho));
     }
 }
