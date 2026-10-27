@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <VersaoQuestPdf>2026.9.1</VersaoQuestPdf>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="QuestPDF" Version="$(VersaoQuestPdf)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- O QuestPDF procura este arquivo de fontes ao lado do .exe. Como publicamos um .exe único,
+         ele vai embutido e é extraído na primeira execução (ver Pdf/FontesPdf.cs). -->
+    <EmbeddedResource Include="$(NuGetPackageRoot)questpdf\$(VersaoQuestPdf)\QuestPDF.Fonts.Lato.br" LogicalName="QuestPDF.Fonts.Lato.br" Visible="false" />
+  </ItemGroup>
+
+</Project>
