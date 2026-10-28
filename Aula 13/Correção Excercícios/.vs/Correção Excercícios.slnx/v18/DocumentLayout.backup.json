@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 13\\Corre\u00E7\u00E3o Excerc\u00EDcios\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{04E5BBD3-742B-4082-B98D-4654683CAC4F}|Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios.csproj|c:\\users\\eduardo.pilonetto\\documents\\programa-o-orientada-a-objetos-com-c-\\aula 13\\corre\u00E7\u00E3o excerc\u00EDcios\\corre\u00E7\u00E3o excerc\u00EDcios\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04E5BBD3-742B-4082-B98D-4654683CAC4F}|Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios.csproj|solutionrelative:corre\u00E7\u00E3o excerc\u00EDcios\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EA8718E-12EA-9F18-95EB-8D3FA096A9EF}|Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios.csproj|c:\\users\\eduardo.pilonetto\\documents\\programa-o-orientada-a-objetos-com-c-\\aula 13\\corre\u00E7\u00E3o excerc\u00EDcios\\corre\u00E7\u00E3o excerc\u00EDcios\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EA8718E-12EA-9F18-95EB-8D3FA096A9EF}|Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios.csproj|solutionrelative:corre\u00E7\u00E3o excerc\u00EDcios\\classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{04E5BBD3-742B-4082-B98D-4654683CAC4F}|Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios.csproj|c:\\users\\eduardo.pilonetto\\documents\\programa-o-orientada-a-objetos-com-c-\\aula 13\\corre\u00E7\u00E3o excerc\u00EDcios\\corre\u00E7\u00E3o excerc\u00EDcios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{04E5BBD3-742B-4082-B98D-4654683CAC4F}|Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios.csproj|solutionrelative:corre\u00E7\u00E3o excerc\u00EDcios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4EA8718E-12EA-9F18-95EB-8D3FA096A9EF}|Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios.csproj|c:\\users\\eduardo.pilonetto\\documents\\programa-o-orientada-a-objetos-com-c-\\aula 13\\corre\u00E7\u00E3o excerc\u00EDcios\\corre\u00E7\u00E3o excerc\u00EDcios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EA8718E-12EA-9F18-95EB-8D3FA096A9EF}|Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios.csproj|solutionrelative:corre\u00E7\u00E3o excerc\u00EDcios\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,9 +28,9 @@
               "RelativeDocumentMoniker": "Corre\u00E7\u00E3o Excerc\u00EDcios\\Classes.cs",
               "ToolTip": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 13\\Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios\\Classes.cs",
               "RelativeToolTip": "Corre\u00E7\u00E3o Excerc\u00EDcios\\Classes.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwPoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAGEDAAAAAAAAAAASwBgDAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T00:02:43.839Z",
+              "WhenOpened": "2026-10-28T00:23:02.435Z",
               "EditorCaption": ""
             },
             {
@@ -41,9 +41,9 @@
               "RelativeDocumentMoniker": "Corre\u00E7\u00E3o Excerc\u00EDcios\\Program.cs",
               "ToolTip": "C:\\Users\\eduardo.pilonetto\\Documents\\Programa-o-Orientada-a-Objetos-com-C-\\Aula 13\\Corre\u00E7\u00E3o Excerc\u00EDcios\\Corre\u00E7\u00E3o Excerc\u00EDcios\\Program.cs",
               "RelativeToolTip": "Corre\u00E7\u00E3o Excerc\u00EDcios\\Program.cs",
-              "ViewState": "AgIAAFkDAAAAAAAAAAAmwGMDAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAAwOoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-28T00:02:03.773Z",
+              "WhenOpened": "2026-10-28T00:22:56.081Z",
               "EditorCaption": ""
             }
           ]
