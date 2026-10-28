@@ -1,0 +1,15 @@
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\bin\Debug\net10.0\Correção Excercícios.exe
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\bin\Debug\net10.0\Correção Excercícios.deps.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\bin\Debug\net10.0\Correção Excercícios.runtimeconfig.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\bin\Debug\net10.0\Correção Excercícios.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\bin\Debug\net10.0\Correção Excercícios.pdb
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\Correção Excercícios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\Correção Excercícios.AssemblyInfoInputs.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\Correção Excercícios.AssemblyInfo.cs
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\Correção Excercícios.csproj.CoreCompileInputs.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\Correção Excercícios.sourcelink.json
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\Correção Excercícios.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\refint\Correção Excercícios.dll
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\Correção Excercícios.pdb
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\Correção Excercícios.genruntimeconfig.cache
+C:\Users\eduardo.pilonetto\Documents\Programa-o-Orientada-a-Objetos-com-C-\Aula 13\Correção Excercícios\Correção Excercícios\obj\Debug\net10.0\ref\Correção Excercícios.dll
